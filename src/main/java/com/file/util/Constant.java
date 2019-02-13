@@ -16,7 +16,7 @@ public class Constant {
     /**
      * 上传保存路径文件夹名称(格式化日期格式)
      */
-    public static String uploadSavePathFormat = "yyyyMM";
+    public static String uploadSavePathFormat = "yyyyMMdd";
 
     /**
      * 文件上传保存路径
