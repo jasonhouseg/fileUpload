@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.util.unit.DataSize;
 
 import javax.servlet.MultipartConfigElement;
 
@@ -14,7 +15,11 @@ public class FileApplication {
         SpringApplication.run(FileApplication.class, args);
     }
 
-    @Bean
+    /**
+     * 文件上传大小配置，也可以通过配置文件配置
+     * @return
+     */
+//    @Bean
     public MultipartConfigElement multipartConfigElement() {
         MultipartConfigFactory factory = new MultipartConfigFactory();
         //// 设置文件大小限制 ,超了，页面会抛出异常信息，这时候就需要进行异常信息的处理了;
@@ -25,5 +30,6 @@ public class FileApplication {
         //factory.setLocation("路径地址");
         return factory.createMultipartConfig();
     }
+
 }
 

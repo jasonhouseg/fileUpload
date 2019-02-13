@@ -44,6 +44,7 @@ public class FileUploadController {
                  * 1、文件路径； 2、文件名； 3、文件格式; 4、文件大小的限制;
                  */
                 BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(new File(file.getOriginalFilename())));
+//                file.transferTo(new File("/Users/Winterchen/Desktop/javatest" + file.getOriginalFilename()));
                 out.write(file.getBytes());
                 out.flush();
                 out.close();
@@ -73,6 +74,7 @@ public class FileUploadController {
     @RequestMapping(value = "/batch/upload", method = RequestMethod.POST)
     @ResponseBody
     public String handleFileUpload(HttpServletRequest request) {
+        // 获取表单中的所有文件
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("file");
         MultipartFile file = null;
         BufferedOutputStream stream = null;
@@ -89,10 +91,10 @@ public class FileUploadController {
                     return "You failed to upload " + i + " => " + e.getMessage();
                 }
             } else {
-                return "You failed to upload " + i + " because the file was empty.";
+                return "You failed to upload " + i + ", because the file was empty.上传失败";
             }
         }
-        return "batchUpload successful";
+        return "batchUpload successful=》批量上传成功";
     }
 
 }
