@@ -19,7 +19,7 @@ import java.util.List;
  * @date 2019-02-02 17:25
  */
 @Controller
-public class FileUploadController {
+public class FileUploadController extends AbstractController{
 
     @RequestMapping("/file")
     public String file() {
@@ -43,8 +43,7 @@ public class FileUploadController {
                  * 这里只是简单一个例子,请自行参考，融入到实际中可能需要大家自己做一些思考，比如：
                  * 1、文件路径； 2、文件名； 3、文件格式; 4、文件大小的限制;
                  */
-                BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(new File(file.getOriginalFilename())));
-//                file.transferTo(new File("/Users/Winterchen/Desktop/javatest" + file.getOriginalFilename()));
+                BufferedOutputStream out = new BufferedOutputStream(new FileOutputStream(new File(constant.uploadPath, file.getOriginalFilename())));
                 out.write(file.getBytes());
                 out.flush();
                 out.close();
@@ -74,6 +73,8 @@ public class FileUploadController {
     @RequestMapping(value = "/batch/upload", method = RequestMethod.POST)
     @ResponseBody
     public String handleFileUpload(HttpServletRequest request) {
+        // 上传文件的存储路径（服务器文件系统上的绝对文件路径）
+//        String uploadFilePath = request.getSession().getServletContext().getRealPath("upload" );
         // 获取表单中的所有文件
         List<MultipartFile> files = ((MultipartHttpServletRequest) request).getFiles("file");
         MultipartFile file = null;
@@ -83,7 +84,8 @@ public class FileUploadController {
             if (!file.isEmpty()) {
                 try {
                     byte[] bytes = file.getBytes();
-                    stream = new BufferedOutputStream(new FileOutputStream(new File(file.getOriginalFilename())));
+//                    stream = new BufferedOutputStream(new FileOutputStream(new File(uploadFilePath, file.getOriginalFilename())));
+                    stream = new BufferedOutputStream(new FileOutputStream(new File(constant.uploadPath, file.getOriginalFilename())));
                     stream.write(bytes);
                     stream.close();
                 } catch (Exception e) {
