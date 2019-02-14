@@ -1,0 +1,14 @@
+上传及后台文件合法性验证的代码解析
+https://www.jb51.net/article/96921.htm
+
+前端限制上传文件的类型
+https://www.cnblogs.com/liboxncg/p/6095627.html
+
+SpringBoot接收MultipartFile强转CommonsMultipartFile失败
+https://blog.csdn.net/ramesha/article/details/84925390
+
+springmvc 中将MultipartFile转为file，springboot 注入CommonsMultipartResolver
+https://www.cnblogs.com/huzi007/p/5971197.html
+
+SpringBoot下文件上传与下载的简单实现
+https://blog.csdn.net/Colton_Null/article/details/76696674

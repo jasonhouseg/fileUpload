@@ -6,12 +6,25 @@
     <title>单文件上传</title>
 </head>
 <body>
+<h2>上传单个文件</h2>
 <form method="POST" enctype="multipart/form-data" action="/upload">
     <p>
         单个文件：<input type="file" name="file" />
     </p>
     <p>
         <input type="submit" value="上传" />
+    </p>
+</form>
+<h2>上传单个文件带合法性验证</h2>
+<form method="POST" enctype="multipart/form-data" action="/api_upload">
+    <p>
+        单个文件：<input type="file" name="file" />
+    </p>
+    <p>
+        多个文件：<input type="file" name="file" multiple/>
+    </p>
+    <p>
+        <input type="submit" value="上传（带验证）" />
     </p>
 </form>
 </body>
