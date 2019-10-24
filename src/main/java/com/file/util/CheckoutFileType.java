@@ -217,7 +217,7 @@ public class CheckoutFileType {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        // final String fileType = getFileType("D:/BICP-HUAWEI.mht");
+        // final String fileType = getFileType("F:/BICP-HUAWEI.mht");
 
         FileInputStream is = null;
         String value = null;

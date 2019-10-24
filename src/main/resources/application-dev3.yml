@@ -1,0 +1,20 @@
+#server
+server:
+  port: 8087
+
+#单个文件大小
+spring:
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 25MB
+      enabled: true
+#上传文件的临时目录 （一般情况下不用特意修改）
+#spring.servlet.multipart.enabled=true
+#spring.servlet.multipart.location=
+
+#设置静态资源路径，多个以逗号分隔
+#resources:
+#  static-locations: classpath:static/,file:${spring.servlet.multipart.location}
+
+

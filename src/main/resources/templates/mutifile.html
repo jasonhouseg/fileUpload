@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html>
 <head>
     <title>多文件上传</title>
 </head>
@@ -9,12 +8,23 @@
     <!--若需要选中多个文件同时上传，那么只需在input中设置属性multiple即可。multiple="multiple"-->
     <p>
         一次选择多个文件：<input type="file" name="file" multiple="multiple"/>
-        一次选择多个文件2：<input type="file" name="file" multiple/>
     </p>
-    <!--<p>单个文件1：<input type="file" name="file" /></p>
-    <p>单个文件2：<input type="file" name="file" /></p>
-    <p>单个文件3：<input type="file" name="file" /></p>-->
     <p><input type="submit" value="上传" /></p>
+</form><hr>
+
+<form method="POST" enctype="multipart/form-data" action="/batch/uploadNew">
+    <p>
+        一次只选择一个文件：<input type="file" name="file"/>
+    </p>
+    <p><input type="submit" value="上传一个文件uploadNew" /></p>
+</form><hr>
+
+<form method="POST" enctype="multipart/form-data" action="/batch/uploadNew">
+    <!--若需要选中多个文件同时上传，那么只需在input中设置属性multiple即可。multiple="multiple"-->
+    <p>
+        一次选择多个文件：<input type="file" name="file" multiple="multiple"/>
+    </p>
+    <p><input type="submit" value="上传uploadNew" /></p>
 </form>
 </body>
 </html>

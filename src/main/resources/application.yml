@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ss_data_manage
+  profiles:
+    active: dev
+  thymeleaf:
+    cache: false # Enable template caching.
+    check-template-location: true # Check that the templates location exists.
+    servlet:
+      content-type: text/html # Content-Type value.
+    enabled: true # Enable MVC Thymeleaf view resolution.
+    encoding: UTF-8 # Template encoding.
+    mode: HTML # Template mode to be applied to templates. See also StandardTemplateModeHandlers.
+    prefix: classpath:/templates/ # Prefix that gets prepended to view names when building a URL.
+    suffix: .html # Suffix that gets appended to view names when building a URL.
+    aop:
+      auto: true #启动aop配置
